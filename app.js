@@ -38,7 +38,7 @@ function startGame() {
     let grass = createStock(0, -70);
     grass.className = "stock gräs";
     let x = 50;
-    let antalStockar = 10;
+    let antalStockar = 50;
     for (let i = 0; i < antalStockar; i++) {
         createStock(x, i * 70);
         x += (Math.floor(Math.random() * 5) - 2) * 10;
