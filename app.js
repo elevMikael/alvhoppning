@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", init);
 let stockar;
 let baver;
+let startTimer;
+let endTimer;
 function initReferences() {
     stockar = document.querySelector("#stockar");
     baver = document.querySelector("#bäver");
@@ -36,13 +38,14 @@ function startGame() {
     let grass = createStock(0, -70);
     grass.className = "stock gräs";
     let x = 50;
-    let antalStockar = 50;
+    let antalStockar = 10;
     for (let i = 0; i < antalStockar; i++) {
         createStock(x, i * 70);
         x += (Math.floor(Math.random() * 5) - 2) * 10;
     }
     let grass2 = createStock(0, antalStockar * 70);
     grass2.className = "stock gräs gräs2";
+    startTimer = Date.now();
 }
 function createStock(x, y) {
     let stock = document.createElement("div");
@@ -60,7 +63,8 @@ function jumpDown() {
             element.remove();
     });
     if (Array.from(stockar.querySelectorAll("div")).length <= 2) {
-        setTimeout(() => { alert("Du vann!"); });
+        endTimer = Date.now();
+        setTimeout(() => { alert("Du vann! Det tog " + (endTimer - startTimer) / 1000 + " sekunder."); });
         document.location.reload();
     }
 }
