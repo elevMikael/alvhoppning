@@ -1,0 +1,46 @@
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+    background-color: #11b1d9;
+}
+
+div {
+    position: absolute;
+}
+
+#stockar {
+    width: 100%;
+    height: 100%;
+}
+
+.stock {
+    width: 30%;
+    height: 50px;
+    left: calc(var(--x) - 15%);
+    top: calc(var(--y) + 90px);
+    background-color: #883b00;
+}
+
+.gräs {
+    width: 100%;
+    height: 140px;
+    top: var(--y);
+    left: 0;
+    background-color: #0fdb1d;
+}
+
+.gräs2 {
+    height: 1000px;
+    top: calc(var(--y) + 90px);
+}
+
+#bäver {
+    background-image: url("https://pngimg.com/d/beaver_PNG30.png");
+    background-size: 100% 100%;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    left: calc(var(--x) - 75px);
+    --x: 50%;
+}
